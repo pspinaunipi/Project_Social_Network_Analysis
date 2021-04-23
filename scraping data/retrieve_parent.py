@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import concurrent.futures
 import gc
+import sys
 
 def compute_time(fin,beg,it):
     """
@@ -44,6 +45,11 @@ def retrieve_parent(reddit,list_id):
             #retrieve parent and delete first three element of the string
             parent = reddit.submission(id=post.crosspost_parent.split("_")[1])
             parents.append(str(parent.subreddit))
+        # this is to make sure to end the programm once we use ctr+c
+        except KeyboardInterrupt:
+            # quit
+            sys.exit()
+        #if an error raises do something
         except:
             parents.append("error " + id)
             print("An error occurred")
@@ -85,9 +91,9 @@ if __name__=="__main__":
     STUDENT = "PAOLO"
 
     # insert reddit credentials
-    reddit = praw.Reddit(client_id='q5_B5l8wOFasRQ',
-                         client_secret='q0o9lSvANudm6fxcXWb8Igo2lOFUbg',
-                         user_agent='pyroblast')
+    reddit = praw.Reddit(client_id='',
+                         client_secret='',
+                         user_agent='')
 
     #this part of the code removes duplicate ids
     if DATA_CLEANING is True:
