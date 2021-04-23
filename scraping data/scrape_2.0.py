@@ -105,7 +105,7 @@ if __name__ == "__main__":
     # ALWAYS SET TO TRUE
     SCRAPE = False
     #ALWAYS SET TO FALSE
-    NEW_LEVEL = True
+    NEW_LEVEL = False
     # insert your reddit credentials
     reddit = praw.Reddit(client_id='',
                          client_secret='',
