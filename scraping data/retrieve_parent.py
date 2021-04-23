@@ -39,10 +39,14 @@ def retrieve_parent(reddit,list_id):
     parents = []
     for i,id in enumerate(list_id):
         # retrieve post
-        post = reddit.submission(id=id)
-        #retrieve parent and delete first three element of the string
-        parent = reddit.submission(id=post.crosspost_parent.split("_")[1])
-        parents.append(str(parent.subreddit))
+        try:
+            post = reddit.submission(id=id)
+            #retrieve parent and delete first three element of the string
+            parent = reddit.submission(id=post.crosspost_parent.split("_")[1])
+            parents.append(str(parent.subreddit))
+        except:
+            parents.append("error " + id)
+            print("An error occurred")
         #convert list into pd.Series
         series_p = pd.Series(data=parents,name="parent",dtype="str")
 
@@ -105,7 +109,7 @@ if __name__=="__main__":
     print("IDs to analyze: {}".format(len(data)))
     print ("parents to retrieve: {}".format(data.shape[0] - first_index))
 
-    while first_index < 3.10e5:
+    while first_index < 3.10e4:
         #look at 160 ids at every iteration
         ids = data.iloc[first_index:]
         start = time()
