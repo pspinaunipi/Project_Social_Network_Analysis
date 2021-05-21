@@ -1,0 +1,13 @@
+,Classifier,Accuracy
+0,Common Neighbours,0.05601596071209331
+1,Jaccard,0.04619398403928791
+2,"Katz, beta: 0.05",0.05570902394106814
+3,"Katz, beta: 0.005",0.06952117863720074
+4,"Katz, beta: 0.0005",0.07013505217925108
+5,Graph Distance,0.01810926949048496
+6,"Rooted page rank, alpha: 0.01",0.03913443830570902
+7,"Rooted page rank, alpha: 0.05",0.039441375076734196
+8,"Rooted page rank, alpha: 0.15",0.039441375076734196
+9,"Rooted page rank, alpha: 0.3",0.03867403314917127
+10,"Rooted page rank, alpha: 0.5",0.039287906691221605
+11,Simrank,0.0055248618784530384
