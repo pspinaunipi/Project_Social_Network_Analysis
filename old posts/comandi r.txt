@@ -1,0 +1,7 @@
+setwd("D:/Dati PRAW/Project_Social_Network_Analysis-main/Project_Social_Network_Analysis-main/scraping data/data")
+data <- read.csv("D:/Dati PRAW/Project_Social_Network_Analysis-main/Project_Social_Network_Analysis-main/scraping data/data/data_subreddit_cleaned.csv", encoding="UTF-8", stringsAsFactors=FALSE)
+filtered <- data[data$from == data$to,]
+pre_2021 <- filtered[filtered$date < 1609459200,]
+subs<- unique(pre_2021$from) # sono 261 nei dati dei subs e non 257 perché 4 sono state nel frattempo bannate
+ordinati <- pre_2021[order(pre_2021$date),]
+write.csv(ordinati, file = "post_pre_2021_ordinati.csv", quote=c(5), fileEncoding = "UTF-8")
