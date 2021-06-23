@@ -1,0 +1,6 @@
+Non c'è una comparazione per il primo modello (essendo solo una simulazione)
+Nel secondo modello, la prima fase è una sola simulazione, quindi anche qui nessuna comparazione.
+Non è stato possibile fare la comparazione dei modelli in cui avevo selezionato nodi in base ad una certa soglia, ovvero:
+-weight>2
+-weight>4
+-crossposts>300
