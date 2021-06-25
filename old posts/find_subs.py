@@ -7,7 +7,7 @@ import sys
 
 if __name__ == "__main__":
 
-    reddit = praw.Reddit(client_id='uZBIHm378Zr5Zg', client_secret='gRZpYGtljXSwmYZ006Kog1GHWa-ISg', user_agent='betta1309')
+    reddit = praw.Reddit(client_id='*', client_secret='*', user_agent='*') # credenziali eliminate
     
     file = "subs_unique_pre2021.txt"
     
